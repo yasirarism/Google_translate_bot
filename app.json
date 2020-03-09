@@ -8,7 +8,7 @@
     "manager",
     "3"
   ],
-  "repository": "https://github.com/yasirarism/Google-Translator-Bot-Telegram/",
+  "repository": "https://github.com/yasirarism/Google_translate_bot/",
   "addons": [
     {
       "plan": "heroku-postgresql",
