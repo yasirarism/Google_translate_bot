@@ -1,5 +1,4 @@
 urllib3
 configparser
-json
 requests
 
