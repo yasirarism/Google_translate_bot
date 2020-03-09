@@ -1,0 +1,20 @@
+{
+  "name": "Yasir Transalate Bot",
+  "description": "Bot Translator!",
+  "keywords": [
+    "telegram",
+    "best",
+    "translator",
+    "manager",
+    "3"
+  ],
+  "repository": "https://github.com/yasirarism/Google-Translator-Bot-Telegram/",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ]
+}
