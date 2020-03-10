@@ -10,3 +10,6 @@ https://web.telegram.org/Google_Translator_API_Bot
     ( Hindi Hi there, what's going on )  
     
 ## Untuk melihat screenshoot silahkan cek di [WIKI](https://github.com/RoyalEagle73/Google-Translator-Bot-Telegram/wiki) SECTION
+
+## Format
+Original Source Code : https://github.com/RoyalEagle73/Google-Translator-Bot-Telegram/
