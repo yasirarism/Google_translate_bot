@@ -23,12 +23,12 @@ def make_reply(msg):
         reply = lang_list
         return reply
     elif msg == "/start":
-        reply = '**** Selamat Datang di Yasir Translator Bot ****,\nKirimkan /help atau klik itu untuk melihat bantuan...\nKirimkan /languages atau klik itu untuk melihat bahasa yang didukung...'
+        reply = '**** Selamat Datang di Yasir Translator Bot ****,\nKirimkan /bantuan atau klik itu untuk melihat bantuan...\nKirimkan /bahasa atau klik itu untuk melihat bahasa yang didukung...'
         return reply
-    elif msg == "/help":
-        reply = """**** Selamat Datang di Yasir Translator Bot ****\n\n1)Untuk menggunakan bot ikuti format berikut ini :\n\n\tTambahkan bahasa yang ingin di terjemahkan di awal kalimat\n\t\tContohnya,\n\t\tEnglish apa kabar semuanya?\n\n2)Untuk melihat bahasa yang didukung, kirimkan\n\t /languages ke saya atau tekan itu... """
+    elif msg == "/bantuan":
+        reply = """**** Selamat Datang di Yasir Translator Bot ****\n\n1)Untuk menggunakan bot ikuti format berikut ini :\n\n\tTambahkan bahasa yang ingin di terjemahkan di awal kalimat\n\t\tContohnya,\n\t\tEnglish apa kabar semuanya?\n\n2)Untuk melihat bahasa yang didukung, kirimkan\n\t /bahasa ke saya atau tekan itu... """
         return reply
-    elif msg == "/languages":
+    elif msg == "/bahasa":
         return lang_list
     if msg is None:
         reply = "Mohon jangan mengedit pesan terakhir :)"
