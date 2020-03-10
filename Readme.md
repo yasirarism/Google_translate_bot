@@ -1,15 +1,14 @@
 # Google-Translator-Bot-Telegram
-## LINK :
-https://web.telegram.org/Google_Translator_API_Bot
+## Heroku Deploy
 
-( [CLICK ME...](https://web.telegram.org/Google_Translator_API_Bot) )
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/yasirarism/Google_translate_bot)
 
 ## Format
 
-### Language to translate into DATA TO BE TRANSLATED 
-    ( Hindi Hi there, what's going on )  
+### Bahasa yang ingin kalian translate
+    ( English hai, semuanya apa kabar kalian? )  
     
-## Untuk melihat screenshoot silahkan cek di [WIKI](https://github.com/RoyalEagle73/Google-Translator-Bot-Telegram/wiki) SECTION
+## Untuk melihat screenshoot silahkan cek di [WIKI](https://github.com/RoyalEagle73/Google-Translator-Bot-Telegram/wiki)
 
-## Format
+## Source Code
 Original Source Code : https://github.com/RoyalEagle73/Google-Translator-Bot-Telegram/
