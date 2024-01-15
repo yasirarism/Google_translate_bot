@@ -19,43 +19,28 @@ lang_list = """ **** Daftar Bahasa ( Besar kecil tidak berpengaruh ) ****\n\tAlb
 
 def make_reply(msg):
     reply = None
-    if msg == "languages":
-        reply = lang_list
-        return reply
-    elif msg == "/start":
-        reply = '**** Selamat Datang di Yasir Translator Bot ****,\nKirimkan /bantuan atau klik itu untuk melihat bantuan...\nKirimkan /bahasa atau klik itu untuk melihat bahasa yang didukung...'
-        return reply
-    elif msg == "/bantuan":
-        reply = """**** Selamat Datang di Yasir Translator Bot ****\n\n1)Untuk menggunakan bot ikuti format berikut ini :\n\n\tTambahkan bahasa yang ingin di terjemahkan di awal kalimat\n\t\tContohnya,\n\t\tEnglish apa kabar semuanya?\n\n2)Untuk melihat bahasa yang didukung, kirimkan\n\t /bahasa ke saya atau tekan itu... """
-        return reply
-    elif msg == "/bahasa":
+    if msg in ["/bahasa", "languages"]:
         return lang_list
+    elif msg == "/bantuan":
+        return """**** Selamat Datang di Yasir Translator Bot ****\n\n1)Untuk menggunakan bot ikuti format berikut ini :\n\n\tTambahkan bahasa yang ingin di terjemahkan di awal kalimat\n\t\tContohnya,\n\t\tEnglish apa kabar semuanya?\n\n2)Untuk melihat bahasa yang didukung, kirimkan\n\t /bahasa ke saya atau tekan itu... """
+    elif msg == "/start":
+        return '**** Selamat Datang di Yasir Translator Bot ****,\nKirimkan /bantuan atau klik itu untuk melihat bantuan...\nKirimkan /bahasa atau klik itu untuk melihat bahasa yang didukung...'
     if msg is None:
-        reply = "Mohon jangan mengedit pesan terakhir :)"
-        return  reply
-    else:
-        msg = msg.lower()
-        try:
-            my_list = msg.split()
-            lang = lang_dict[my_list[0].lower()]
-            text = ""
-            for i in range(1, len(my_list)):
-                text += my_list[i] + " "
-            
-            reply = translator_script.text(lang, text)
-            return reply    
-        
-        except Exception as e:
-            reply = "! ! ! ! Mohon ikuti format yang benar, gan ! ! ! !"
-            return reply
+        return "Mohon jangan mengedit pesan terakhir :)"
+    msg = msg.lower()
+    try:
+        my_list = msg.split()
+        lang = lang_dict[my_list[0].lower()]
+        text = "".join(f"{my_list[i]} " for i in range(1, len(my_list)))
+        return translator_script.text(lang, text)
+    except Exception as e:
+        return "! ! ! ! Mohon ikuti format yang benar, gan ! ! ! !"
 
 update_id = None
 while True:
     updates = bot.get_updates(offset=update_id)
-    updates = updates['result']
-
-    if updates:
-        for item in updates[len(updates)-1:]:
+    if updates := updates['result']:
+        for item in updates[-1:]:
             update_id = item["update_id"]
             try:
                 message = str(item["message"]["text"])
@@ -67,7 +52,7 @@ while True:
             except Exception as e:
                 print("catch block")
                 from_ = item["edited_message"]["from"]["id"]
-            
+
             reply = make_reply(message)
             bot.send_message(reply, from_)
             print("STATUS : Pesan berhasil dikirim dengan sukses ")
